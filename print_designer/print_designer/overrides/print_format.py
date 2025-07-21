@@ -8,16 +8,16 @@ from frappe.printing.doctype.print_format.print_format import PrintFormat
 
 class PDPrintFormat(PrintFormat):
 	def export_doc(self):
-		if (
-			not self.standard == "Yes"
-			or not frappe.conf.developer_mode
-			or frappe.flags.in_patch
-			or frappe.flags.in_install
-			or frappe.flags.in_migrate
-			or frappe.flags.in_import
-			or frappe.flags.in_setup_wizard
-		):
-			return
+		# if (
+		# 	not self.standard == "Yes"
+		# 	or not frappe.conf.developer_mode
+		# 	or frappe.flags.in_patch
+		# 	or frappe.flags.in_install
+		# 	or frappe.flags.in_migrate
+		# 	or frappe.flags.in_import
+		# 	or frappe.flags.in_setup_wizard
+		# ):
+		# 	return
 
 		if not self.print_designer:
 			return super().export_doc()
